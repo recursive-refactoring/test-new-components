@@ -43,7 +43,16 @@ export const ComponentsFeature = () => {
       </Box>
       <br />
       <Box sx={{ cursor: "pointer" }} component={"span"}>
-        <SquareCheckIcon iconColor="error.main" hoverColor="success.main" />
+        <SquareCheckIcon
+          iconColor="error.main"
+          hoverColor="success.main"
+          sx={{
+            color: "common.black",
+            "&:hover": {
+              color: "info.main",
+            },
+          }}
+        />
       </Box>
       <br />
       <CommonTable columns={column} data={renderData} />
