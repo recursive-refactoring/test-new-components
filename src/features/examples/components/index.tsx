@@ -42,6 +42,17 @@ export const ComponentsFeature = () => {
         <SquareCheckIcon fill="success.main" />
       </Box>
       <br />
+      <Box
+        component="span"
+        sx={{
+          "&:hover path": {
+            color: "warning.main",
+          },
+        }}
+      >
+        <SquareCheckIcon fill="success.main" />
+      </Box>
+      <br />
       <Box sx={{ cursor: "pointer" }} component={"span"}>
         <SquareCheckIcon
           iconColor="error.main"
