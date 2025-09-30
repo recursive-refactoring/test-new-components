@@ -1,7 +1,7 @@
 "use client";
 
 import { palette } from "@/theme/palette";
-import { shadows } from "@/theme/shadows";
+import { customShadows, shadows } from "@/theme/shadows";
 import { typography } from "@/theme/typography";
 import { Theme } from "@emotion/react";
 import {
@@ -10,14 +10,16 @@ import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
+  useTheme,
 } from "@mui/material";
 
 export const UiThemeProvider = (props: any) => {
   const { children } = props;
+  const defaultTheme = useTheme();
   const themeOptions: Theme = {
     palette,
     typography,
-    shadows,
+    shadows: [...defaultTheme?.shadows, ...customShadows],
     spacing: 10,
   };
 
