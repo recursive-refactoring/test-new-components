@@ -29,11 +29,9 @@ export const ComponentsFeature = () => {
       <br />
       <Button onClick={handlePrint}>Print </Button>
       <br />
-      <SquareCheckIcon fill="warning.main" />
+      <SquareCheckIcon />
       <br />
-      <Box sx={{ cursor: "pointer" }} component={"span"}>
-        <SquareCheckIcon iconColor="error.main" hoverColor="success.main" />
-      </Box>
+
       <br />
       <CommonTable columns={column} data={renderData} />
       <Box
