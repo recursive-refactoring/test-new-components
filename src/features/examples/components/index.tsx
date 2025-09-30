@@ -23,13 +23,24 @@ export const ComponentsFeature = () => {
   const showSnackbar = () => {
     infoSnackbar("this is success");
   };
+
   const theme = useTheme();
+
   return (
     <Box ref={printRef} className="printable">
       <br />
       <Button onClick={handlePrint}>Print </Button>
       <br />
-      <SquareCheckIcon fill="warning.main" />
+      <Box
+        component="span"
+        sx={{
+          "&:hover path": {
+            fill: theme?.palette?.primary?.main,
+          },
+        }}
+      >
+        <SquareCheckIcon fill="success.main" />
+      </Box>
       <br />
       <Box sx={{ cursor: "pointer" }} component={"span"}>
         <SquareCheckIcon iconColor="error.main" hoverColor="success.main" />

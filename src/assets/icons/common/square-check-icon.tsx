@@ -9,7 +9,7 @@ const SquareCheckIcon = (props: any) => {
     width = "20px",
     height = "20px",
     sx = {},
-    fill = "primary.main",
+    fill = theme?.palette?.primary?.main,
     iconColor = fill,
     hoverColor,
   } = props;
