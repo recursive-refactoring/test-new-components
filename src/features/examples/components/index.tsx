@@ -3,7 +3,7 @@ import { useComponents } from "./use-components";
 import { CustomFormProvider } from "@/providers/custom-form-provider";
 import { FormGrid } from "@/components/grids/form-grid";
 import { signinFormFieldData } from "./components.data";
-import { Box, Button, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import ItemAvatarCountCard from "@/components/cards/item-avatar-count-card";
 import { CommonLayoutAvatarImage } from "@/assets/images/layout";
 import ActivityInfoCard from "@/components/cards/activity-info-card";
@@ -30,6 +30,8 @@ export const ComponentsFeature = () => {
     <Box ref={printRef} className="printable">
       <br />
       <Button onClick={handlePrint}>Print </Button>
+
+      <Typography color="text.secondary">This is the secondary text</Typography>
       <br />
       <Box
         component="span"

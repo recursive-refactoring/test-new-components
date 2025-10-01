@@ -8,10 +8,10 @@ const secondary = {
   main: "#1E293B",
 };
 
-const text = {
-  primary: "#30425F",
-  secondary: "#666666",
-};
+// const text = {
+//   primary: "#30425F",
+//   secondary: "#666666",
+// };
 
 const success = {
   main: "#12B76A",
@@ -59,7 +59,7 @@ export const palette = {
   error,
   warning,
   info,
-  text,
+  // text,
   background,
   grey,
   divider,
