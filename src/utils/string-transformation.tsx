@@ -24,3 +24,26 @@ export const convertCurrentCaseToTitleCase = (
     )
     ?.join?.(" ");
 };
+
+export function toTitleCaseFromXCase(str: any, sep: any = "_") {
+  const parts = [];
+  let capitalize = true;
+
+  for (let i = 0; i < str.length; i++) {
+    const ch = str[i];
+
+    if (ch === sep) {
+      parts.push(" ");
+      capitalize = true;
+    } else {
+      if (capitalize) {
+        parts.push(ch.toUpperCase());
+        capitalize = false;
+      } else {
+        parts.push(ch.toLowerCase());
+      }
+    }
+  }
+
+  return parts.join("");
+}

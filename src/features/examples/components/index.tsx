@@ -17,6 +17,7 @@ import { CommonButton } from "@/components/buttons/common-button";
 import { infoSnackbar } from "@/libs/snackbar.lib";
 import { SquareCheckIcon } from "@/assets/icons";
 import { HorizontalTabs } from "@/components/tabs/horizontal-tabs";
+import { toTitleCaseFromXCase } from "@/utils/string-transformation";
 
 export const ComponentsFeature = () => {
   const { column, renderData, methods, handlePrint, printRef } =
@@ -32,7 +33,9 @@ export const ComponentsFeature = () => {
       <br />
       <Button onClick={handlePrint}>Print </Button>
 
-      <Typography color="text.secondary">This is the secondary text</Typography>
+      <Typography color="text.secondary">
+        {toTitleCaseFromXCase("helloWorldFromChatGpt", "-")}
+      </Typography>
 
       <HorizontalTabs
         tabsDataArray={[
