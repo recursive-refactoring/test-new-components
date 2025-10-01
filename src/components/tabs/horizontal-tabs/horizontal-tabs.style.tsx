@@ -1,4 +1,5 @@
 import { pxToRem } from "@/utils/styles";
+import { alpha } from "@mui/material";
 
 export const styles = {
   circleIconStyle: { ml: "auto", mt: 0.5, cursor: "pointer" },
@@ -10,7 +11,17 @@ export const styles = {
     borderColor: "primary.light",
   },
   tabIndicator: {
-    sx: { background: "primary.main" },
+    sx: {
+      background: "primary.main",
+      color: "common.white",
+      boxShadow: `0px 1px 2px 0px #0009912`,
+      "&.selected": {
+        color: "grey.900",
+      },
+      "&:hover": {
+        background: "info.main",
+      },
+    },
   },
   tabsStyle: {
     paddingX: 2,

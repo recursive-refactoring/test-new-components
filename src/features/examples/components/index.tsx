@@ -16,6 +16,7 @@ import { ALERT_DIALOGS_TYPES } from "@/constants/alert-dialog";
 import { CommonButton } from "@/components/buttons/common-button";
 import { infoSnackbar } from "@/libs/snackbar.lib";
 import { SquareCheckIcon } from "@/assets/icons";
+import { HorizontalTabs } from "@/components/tabs/horizontal-tabs";
 
 export const ComponentsFeature = () => {
   const { column, renderData, methods, handlePrint, printRef } =
@@ -32,6 +33,27 @@ export const ComponentsFeature = () => {
       <Button onClick={handlePrint}>Print </Button>
 
       <Typography color="text.secondary">This is the secondary text</Typography>
+
+      <HorizontalTabs
+        tabsDataArray={[
+          {
+            _id: 1,
+            name: "Tab 1",
+            component: Typography,
+            componentProps: {
+              children: "Hello",
+            },
+          },
+          {
+            _id: 2,
+            name: "Tab 2",
+            component: Typography,
+            componentProps: {
+              children: "Hello",
+            },
+          },
+        ]}
+      />
       <br />
       <Box
         component="span"
