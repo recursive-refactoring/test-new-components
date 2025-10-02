@@ -1,4 +1,4 @@
-import { AddNewItemButton } from "@/components/buttons/add-new-item-button";
+import { AddNewItemButton } from "@/components/buttons/new-item-button/NewItemButton";
 import { HorizontalTabs } from "@/components/tabs/horizontal-tabs";
 import { Box } from "@mui/material";
 import { changeLogsTabData } from "./change-logs.data";

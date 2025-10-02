@@ -1,14 +1,18 @@
 "use client";
 import { AddBox, AddCircle } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import { AddNewItemButtonPropsI } from "../buttons.interface";
 
 const mappedIcon: any = {
   circle: AddCircle,
   square: AddBox,
 };
 
-export const AddNewItemButton = (props: AddNewItemButtonPropsI) => {
+export const ACTION_TYPES: any = {
+  CREATE: "create",
+  ADD: "add",
+};
+
+export const NewItemButton = (props: any) => {
   const {
     disabled = false,
     variant = "contained",
@@ -19,10 +23,14 @@ export const AddNewItemButton = (props: AddNewItemButtonPropsI) => {
     iconType = "circle",
     size = "medium",
     customStyles = {},
-    children,
+    actionType = "create",
+    action = "issue",
+    extraText,
   } = props;
 
   const MapIcon = mappedIcon?.[iconType];
+
+  const hasText = !!actionType && !!action && !!extraText;
 
   return (
     <Button
@@ -30,19 +38,22 @@ export const AddNewItemButton = (props: AddNewItemButtonPropsI) => {
       color={color}
       disableElevation
       disabled={disabled}
-      className="small"
       size={size}
       startIcon={hasStartIcon && <MapIcon />}
       endIcon={hasEndIcon && <MapIcon />}
-      onClick={() => onClick?.()}
+      onClick={onClick}
       sx={{
         "& .MuiButton-startIcon": {
-          ...(!!children ? {} : { marginRight: 0, marginLeft: 0 }),
+          ...(!!hasText ? {} : { marginRight: 0, marginLeft: 0 }),
         },
         ...customStyles,
       }}
     >
-      {children}
+      {ACTION_TYPES?.[actionType] ?? ""}
+      {extraText && extraText}
+      {action && action}
     </Button>
   );
 };
+
+export default NewItemButton;
