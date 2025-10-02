@@ -18,3 +18,21 @@ export const generateRandomText = (
   }
   return result;
 };
+
+const hashStringToInt = (str: string): number => {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
+};
+
+export const generateColorFromName = (id: string) => {
+  const hash = hashStringToInt(id);
+  const hue = hash % 360;
+  const saturation = 60 + (hash % 30);
+  const lightness = 50 + (hash % 10);
+
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+};
