@@ -6,8 +6,8 @@ export const truncateText = (text = "---", sliceLimit = 20) => {
     : text;
 };
 
-export const fullName = (firstName?: any, lastName?: any) => {
-  if (!!!firstName && !!!lastName) return "None";
+export const fullName = (firstName?: any, lastName?: any, fallback = "---") => {
+  if (!!!firstName && !!!lastName) return fallback;
   return `${firstName ?? ""} ${lastName ?? ""}`;
 };
 
