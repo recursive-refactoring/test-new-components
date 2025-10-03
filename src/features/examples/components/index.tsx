@@ -20,8 +20,15 @@ import { HorizontalTabs } from "@/components/tabs/horizontal-tabs";
 import { toTitleCaseFromXCase } from "@/utils/string-transformation";
 
 export const ComponentsFeature = () => {
-  const { column, renderData, methods, handlePrint, printRef } =
-    useComponents();
+  const {
+    column,
+    renderData,
+    methods,
+    handlePrint,
+    printRef,
+    onSubmit,
+    handleSubmit,
+  } = useComponents();
   const showSnackbar = () => {
     infoSnackbar("this is success");
   };
@@ -103,9 +110,11 @@ export const ComponentsFeature = () => {
           borderRadius: 2,
         }}
       >
-        <CustomFormProvider methods={methods}>
+        <CustomFormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
           <FormGrid formFieldsList={signinFormFieldData} />
+          <Button type="submit">Submit</Button>
         </CustomFormProvider>
+        <br />
         <CommonButton onClick={showSnackbar}>Show Snackbar</CommonButton>
         <Box>
           <ItemAvatarCountCard
@@ -131,7 +140,7 @@ export const ComponentsFeature = () => {
         cancelBtnFull
         showCancelButton={false}
       >
-        <CustomFormProvider methods={methods}>
+        <CustomFormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
           <FormGrid formFieldsList={signinFormFieldData} />
         </CustomFormProvider>
       </CommonDialog>

@@ -6,15 +6,20 @@ import {
   data,
   signinFormDefaultValues,
 } from "./components.data";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export const useComponents = () => {
   const column = columnsDynamic;
   const renderData = data;
+  const [fil, setFil] = useState({});
 
-  const { methods } = useFormLib({
+  const { methods, handleSubmit } = useFormLib({
     defaultValues: signinFormDefaultValues,
   });
+
+  const onSubmit = (formData: any) => {
+    console.log(formData);
+  };
 
   const printRef: any = useRef<any>(null);
 
@@ -22,5 +27,13 @@ export const useComponents = () => {
     window.print();
   };
 
-  return { column, renderData, methods, handlePrint, printRef };
+  return {
+    column,
+    renderData,
+    methods,
+    handlePrint,
+    printRef,
+    onSubmit,
+    handleSubmit,
+  };
 };
